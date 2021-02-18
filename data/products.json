@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Pot of beans",
+
+    "description": "a wonderful pot of beans",
+    "quantity": 7,
+    "sellerName": "Iya Basira",
+    "location": "Ijebu Ode",
+    "reviews": ["make sense die", "e go well baba", "chop and chop life"],
+    "ratings": 3.5,
+    "price": 340
+  },
+  {
+    "title": "Pot of agbalumo",
+
+    "description": "a wonderful bowl of agbalumo",
+    "quantity": 5,
+    "sellerName": "Iya Kudus",
+    "location": "Obalende",
+    "reviews": ["make brians die", "e go well sir", "chop and chop away"],
+    "ratings": 4.5,
+    "price": 250
+  }
+]

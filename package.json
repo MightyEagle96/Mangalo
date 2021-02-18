@@ -1,0 +1,41 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "A web project for a company called Mangalo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MightyEagle96/Mangalo.git"
+  },
+  "author": "Bra. Mighty Eagle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MightyEagle96/Mangalo/issues"
+  },
+  "homepage": "https://github.com/MightyEagle96/Mangalo#readme",
+  "dependencies": {
+    "dateformat": "^4.5.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "prettier": "^2.2.1"
+  }
+}
