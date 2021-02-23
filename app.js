@@ -1,16 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const morgan = require('morgan');
+
 const dotenv = require('dotenv');
+
 const errorController = require('./controllers/errorController');
 const productRouter = require('./routes/productRouter');
+const userRouter = require('./routes/userRoute');
+const fileUploadRouter = require('./routes/fileUploadRouter');
 
 const app = express();
-const router = express.Router();
 
 // to post to db
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+// app.use(express.static(__dirname + '/public'));
 
 dotenv.config({ path: './config.env' });
 
@@ -28,6 +31,8 @@ mongoose
 
 // my routers
 app.use('/products', productRouter);
+app.use('/users', userRouter);
+// app.use('/uploadCsv', fileUploadRouter);
 
 // my error controller
 app.use(errorController);

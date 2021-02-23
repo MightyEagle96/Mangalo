@@ -1,4 +1,4 @@
-title	description	quantity	image	sellerName	location	reviews	ratings	price
-Pan Cake	A wonderful delicious pancake	3		Iya Basira	ijebu ode	"sweet, tasty, delicious"	3.4	230
-Water Melon juice	a balanced blend of water melon	8		Iya Usman	Obalende	"making sense, so sweet"	4.2	200
-coconut blend	a balanced toast	7		Maitama Stores	Maitama	"grand, epic, wow"	2.3	201
+title,description,quantity,image,sellerName,location,reviews,ratings,price
+socks,a pair of warm socks,5,,Godon and Probe,port harcourt,"good, grand, epic",3.4,23
+suit,wonderful trousers,2,,Dolce & Gabana,abuja,"gorgeous, fabulous, beauiful",2,32
+blazers,wonderful blazers,3,,Louise Vuitton,lagos,"glorious, glamorous, exquisite",3,45
