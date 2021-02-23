@@ -1,0 +1,27 @@
+GET http://localhost:2207/products
+
+###
+GET http://localhost:2207/products/602197cbc2c23809e47be1a4
+
+###
+POST http://localhost:2207/products
+Content-Type: application/json
+
+{
+    "title":"New Bible",
+    "description":"a brand new kjv bible",
+    "price":24,
+    "quantity": 4,
+    "reviews":["solid","gallant","grand"]
+}
+
+###
+PATCH http://localhost:2207/products/602197cbc2c23809e47be1a4
+Content-Type: application/json
+
+{
+    "reviews":["good","great","grand"]
+}
+
+###
+DELETE http://localhost:2207/products/602197cbc2c23809e47be1a4

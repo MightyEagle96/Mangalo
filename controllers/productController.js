@@ -4,14 +4,25 @@ const multer = require('multer');
 const Product = require('../models/product');
 const { catchAsync } = require('../utils/catchAsync');
 
-exports.getProducts = async (req, res, next) => {
+exports.getProducts = async (req, res) => {
   const products = await Product.find();
 
-  res.status(200).json({ status: 'success', products });
+  res.json({ length: products.length, products });
 };
 
-exports.createProduct = catchAsync(async (req, res, next) => {
-  console.log(req.file);
+exports.getProduct = async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findById(id);
+  res.json(product);
+};
+
+exports.updateProduct = async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findByIdAndUpdate(id, req.body);
+  res.json(product);
+};
+
+exports.createProduct = catchAsync(async (req, res) => {
   if (req.file) {
     const ext = req.file.mimetype.split('/')[1];
     console.log(ext);
@@ -32,9 +43,17 @@ exports.createProduct = catchAsync(async (req, res, next) => {
         const products = JSON.parse(data);
         await Product.create(products);
       });
-    } else {
-      await Product.create(req.body);
     }
+  } else {
+    console.log(req.body);
+    await Product.create(req.body);
   }
-  res.status(201).json({ status: 'success', message: 'Product created' });
+  res.sendStatus(201);
 });
+
+exports.deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  await Product.findByIdAndDelete(id);
+  res.sendStatus(204);
+};
