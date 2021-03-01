@@ -1,0 +1,19 @@
+h1 Register here 
+
+form(action="/users/register", method="post")
+    div
+        label(for="name") Name 
+        input#name(type="text", name="name", required) 
+    div
+        label(for="email") Email 
+        input#email(type="email", name="email", required) 
+    div
+        label(for="password") Password 
+        input#password(type="password", name="password", required) 
+    div
+        label(for="confirmPassword") Confirm Password 
+        input#confirmPassword(type="password", name="confirmPassword") 
+    div
+        button(type="submit") Register 
+    div 
+        a(href="/login") Already registered 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const validator = require('validator');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const slugify = require('slugify');
 
 const userSchema = new mongoose.Schema({
@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a password'],
     maxlength: [8, 'Password must be 8 characters long'],
-    select: false,
   },
   confirmPassword: {
     type: String,
@@ -30,6 +29,11 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords do not match',
     },
   },
+});
+userSchema.pre('save', async function (next) {
+  this.confirmPassword = undefined;
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
 });
 
 const User = mongoose.model('User', userSchema);
